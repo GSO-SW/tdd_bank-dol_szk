@@ -21,13 +21,27 @@ namespace BankTest
         [TestMethod]
         public void Auszahlen_und_Guthaben_abziehen()
         {
+            // Arrange
+            Konto k1 = new Konto(100);
 
+            // Act 
+            k1.Auszahlen(100);
+
+            // Assert
+            Assert.AreEqual(k1.Guthaben, 0);
         }
 
         [TestMethod]
         public void Guthaben_Ausgeben()
         {
+            // Arrange
+            Konto k1 = new Konto(100);
 
+            // Act
+            int temp = k1.Guthaben;
+
+            // Assert
+            Assert.AreEqual(temp, 100);
         }
     }
 }
