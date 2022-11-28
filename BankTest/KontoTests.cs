@@ -53,7 +53,6 @@ namespace BankTest
             // Act
             Konto k = new Konto(guthaben);
         }
-
         [TestMethod]
         public void KontoNr_KannAbgefragtWerden()
         {
@@ -65,7 +64,7 @@ namespace BankTest
             //Arrange
             Assert.AreEqual(nummer_soll, nummer_ist);
         }
-
+        
         [TestMethod]
         public void KontoNr_WirdAutomatischVergeben()
         {
