@@ -32,16 +32,53 @@ namespace BankTest
         }
 
         [TestMethod]
-        public void Konto_Konstruktor()
+        public void Guthaben_Ausgeben()
         {
             // Arrange
-            int guthaben = 100;
+            Konto k1 = new Konto(100);
 
             // Act
-            Konto k1 = new Konto(guthaben);
-            
+            int temp = k1.Guthaben;
+
             // Assert
-            Assert.AreEqual(guthaben, k1.Guthaben);
+            Assert.AreEqual(temp, 100);
         }
+
+        [TestMethod]
+        [ExpectedException(typeof(ArgumentOutOfRangeException))]
+        public void Konto_KannNichtMitNegativemBetragErstelltWerden()
+        {
+            // Arrange
+            int guthaben = -1;
+            // Act
+            Konto k = new Konto(guthaben);
+        }
+
+        [TestMethod]
+        public void KontoNr_KannAbgefragtWerden()
+        {
+            // Arrange
+            Konto k = new Konto(0);
+            int nummer_soll = 1;
+            // Act
+            int nummer_ist = k.KontoNr;
+            //Arrange
+            Assert.AreEqual(nummer_soll, nummer_ist);
+        }
+
+        [TestMethod]
+        public void KontoNr_WirdAutomatischVergeben()
+        {
+            // Arrange
+            Konto k1 = new Konto(0);
+            Konto k2 = new Konto(0);
+            Konto k3 = new Konto(0);
+            int kontoNummer_soll = 3;
+            // Act
+            int kontoNummer_ist = k3.KontoNr;
+            // Assert
+            Assert.AreEqual(kontoNummer_soll, kontoNummer_ist);
+        }
+
     }
 }
