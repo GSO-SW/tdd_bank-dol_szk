@@ -32,16 +32,16 @@ namespace BankTest
         }
 
         [TestMethod]
-        public void Guthaben_Ausgeben()
+        public void Konto_Konstruktor()
         {
             // Arrange
-            Konto k1 = new Konto(100);
+            int guthaben = 100;
 
             // Act
-            int temp = k1.Guthaben;
-
+            Konto k1 = new Konto(guthaben);
+            
             // Assert
-            Assert.AreEqual(temp, 100);
+            Assert.AreEqual(guthaben, k1.Guthaben);
         }
     }
 }
