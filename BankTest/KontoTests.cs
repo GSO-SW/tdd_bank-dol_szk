@@ -38,7 +38,7 @@ namespace BankTest
             Konto k1 = new Konto(100);
 
             // Act
-            int temp = k1.Guthaben;
+            double temp = k1.Guthaben;
 
             // Assert
             Assert.AreEqual(temp, 100);
@@ -57,6 +57,7 @@ namespace BankTest
         public void KontoNr_KannAbgefragtWerden()
         {
             // Arrange
+            Konto.KontoCounter = 0;
             Konto k = new Konto(0);
             int nummer_soll = 1;
             // Act
@@ -69,6 +70,7 @@ namespace BankTest
         public void KontoNr_WirdAutomatischVergeben()
         {
             // Arrange
+            Konto.KontoCounter = 0;
             Konto k1 = new Konto(0);
             Konto k2 = new Konto(0);
             Konto k3 = new Konto(0);
