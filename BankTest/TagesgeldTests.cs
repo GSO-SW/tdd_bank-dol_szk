@@ -7,8 +7,10 @@ using System.Threading.Tasks;
 
 namespace BankTest
 {
-    internal class TagesgeldTests
+    [TestClass]
+    public class TagesgeldTests
     {
+        [TestMethod]
         public void Tagesgeld_KannErstelltWerden()
         {
             // Arrange
@@ -18,7 +20,7 @@ namespace BankTest
             Tagesgeld t = new Tagesgeld(verrechnungskonto);
 
             // Assert
-            Assert.AreEqual(verrechnungskonto.KontoNummer, t.VerrechnungsKontoNr);
+            Assert.AreEqual(verrechnungskonto.KontoNr, t.VerrechnungsKontoNr);
             Assert.AreEqual(0, t.Guthaben);
             Assert.AreEqual(0.0, t.Zinssatz);
         }
@@ -54,7 +56,7 @@ namespace BankTest
 
             // Assert
             Assert.AreEqual(kontoStartguthaben - betrag, k.Guthaben);
-            Assert.AreEqual(betrag, t.Guhaben);
+            Assert.AreEqual(betrag, t.Guthaben);
 
         }
     }

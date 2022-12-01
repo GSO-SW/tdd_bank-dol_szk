@@ -4,7 +4,7 @@ namespace Bank
 {
     public class Konto
     {
-        private int guthaben;
+        private double guthaben;
         public static int KontoCounter = 0;
         private int kontoNr;
 
@@ -16,7 +16,7 @@ namespace Bank
             }
         }
 
-        public int Guthaben
+        public double Guthaben
         {
             get
             {
@@ -38,12 +38,12 @@ namespace Bank
             }
         }
 
-        public void Einzahlen(int betrag)
+        public void Einzahlen(double betrag)
         {
             guthaben += betrag;
         }
 
-        public void Auszahlen(int betrag)
+        public void Auszahlen(double betrag)
         {
             if (guthaben >= betrag)
             {
